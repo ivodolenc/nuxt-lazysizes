@@ -1,0 +1,55 @@
+{
+  "name": "nuxt-lazysizes",
+  "version": "1.0.0",
+  "description": "A simple nuxt module that helps you easily integrate lazysizes into nuxt projects.",
+  "license": "MIT",
+  "author": "Ivo Dolenc",
+  "contributors": [
+    {
+      "name": "Ivo Dolenc <ivodolenc@gmail.com>"
+    }
+  ],
+  "main": "lib/module.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivodolenc/nuxt-lazysizes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivodolenc/nuxt-lazysizes/issues"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "nuxtjs",
+    "nuxt",
+    "nuxt-module",
+    "lazyload",
+    "lazy-loading",
+    "lazysizes",
+    "nuxt-lazysizes"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "dependencies": {
+    "lazysizes": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "babel-eslint": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "husky": "latest",
+    "prettier": "latest",
+    "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
