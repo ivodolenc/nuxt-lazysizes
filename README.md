@@ -1,12 +1,19 @@
+<p align="center">
+    <img src=".github/assets/cover.svg" >
+</p>
+
 <h1>Nuxt LazySizes</h1>
 
-A simple nuxt module that helps you easily integrate [lazysizes](https://github.com/aFarkas/lazysizes) into nuxt projects.
+Lazysizes module for Nuxt.js
 
 ## Features
 
-- Integrates `lazysizes` into a nuxt project
-- Allows you to set options through the module
-- [Default lazysizes features](https://github.com/aFarkas/lazysizes#what-makes-lazysizes-so-awesome) 🔥
+- Helps you integrate `lazysizes` image loader
+- Allows you to easily set options through the module
+- Boosts your lighthouse score and overall performance
+- Provides a `lightweight`, `fast` and `reliable` solution
+- Includes `zero-config` setup ready to go
+- [and much more](https://github.com/aFarkas/lazysizes#what-makes-lazysizes-so-awesome) 🔥
 
 ## Setup
 
