@@ -81,11 +81,38 @@ export default {
 
 ## Options
 
+`lazysizes` comes with a simple `markup` and `JS` API. Normally you will only need to use the markup API.
+
+**Markup API**
+
+Add the class `lazyload` to all `img` and `iframe` elements, which should be loaded lazy. _Instead_ of a `src` or `srcset` attribute use a `data-src` or `data-srcset` attribute:
+
+```html
+<img data-src="image.jpg" class="lazyload" />
+<!-- retina optimized image: -->
+<img
+  data-srcset="responsive-image1.jpg 1x, responsive-image2.jpg 2x"
+  class="lazyload"
+/>
+```
+
+`lazysizes` supports setting the `sizes` attribute automatically, corresponding to the current size of your image - just set the value of `data-sizes` to `auto`.
+
+```html
+<img
+  data-sizes="auto"
+  data-srcset="responsive-image1.jpg 300w,
+	    responsive-image2.jpg 600w,
+	    responsive-image3.jpg 900w"
+  class="lazyload"
+/>
+```
+
+[More info](https://github.com/aFarkas/lazysizes#markup-api)
+
 **JS API**
 
 `lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
-
-[More info](https://github.com/aFarkas/lazysizes#js-api)
 
 ```js
 // nuxt.config.js
@@ -117,11 +144,11 @@ export default {
 }
 ```
 
+[More info](https://github.com/aFarkas/lazysizes#js-api)
+
 **CSS API**
 
 `lazysizes` adds the class `lazyloading` while the images are loading and the class `lazyloaded` as soon as the image is loaded. This can be used to add unveil effects:
-
-[More info](https://github.com/aFarkas/lazysizes#css-api)
 
 ```css
 /* global css */
@@ -153,6 +180,8 @@ export default {
   background: #f7f7f7 url(loader.gif) no-repeat center;
 }
 ```
+
+[More info](https://github.com/aFarkas/lazysizes#css-api)
 
 ## License
 
