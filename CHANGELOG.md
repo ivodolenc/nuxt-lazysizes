@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.0.2...v1.0.3) (2020-11-03)
+
+
+### Bug Fixes
+
+* remove unnecessary if statement ([36abdca](https://github.com/ivodolenc/nuxt-lazysizes/commit/36abdcaee267ee22ee84a53d3fafee17272785ab))
+
 ### [1.0.2](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.0.1...v1.0.2) (2020-11-02)
 
 
