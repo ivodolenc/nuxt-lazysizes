@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.0.3...v1.1.0) (2020-11-10)
+
+
+### Features
+
+* add option for extending the nuxt build loader ([c542eee](https://github.com/ivodolenc/nuxt-lazysizes/commit/c542eee3a584e5234c7fe6d912c03c14e1ab2d48))
+
 ### [1.0.3](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.0.2...v1.0.3) (2020-11-03)
 
 
