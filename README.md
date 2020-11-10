@@ -4,12 +4,13 @@
 
 <h1>Nuxt LazySizes</h1>
 
-Lazysizes module for Nuxt.js
+LazySizes module for Nuxt.js
 
 ## Features
 
 - Helps you integrate `lazysizes` image loader
 - Allows you to easily set options through the module
+- Includes settings for extending the nuxt build `loader`
 - Boosts your lighthouse score and overall performance
 - Provides a `lightweight`, `fast` and `reliable` solution
 - Includes `zero-config` setup ready to go
@@ -39,87 +40,92 @@ export default {
 
 ## Examples
 
-`lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in conjunction with a `data-src` and/or `data-srcset` attribute. Optionally you can also add a `src` attribute with a low quality image:
+`lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
+
+**Basic usage**
 
 ```js
 // nuxt.config.js
 
 {
-  buildModules: ['nuxt-lazysizes']
+  buildModules: ['nuxt-lazysizes'],
 }
 ```
 
 ```html
-<!-- non-responsive: -->
-<img data-src="image.jpg" class="lazyload" />
+<img data-src="/media/image.jpg" class="lazyload" />
 ```
+
+[More info](https://github.com/aFarkas/lazysizes#more-about-the-api)
+
+**Advanced usage (optional)**
+
+By default, loading images from the `assets` folder won't work without extra settings because lazysizes uses custom attributes for lazyloading.
 
 ```html
-<!-- responsive example with automatic sizes calculation: -->
-<img
-  data-sizes="auto"
-  data-src="image2.jpg"
-  data-srcset="image1.jpg 300w,
-    image2.jpg 600w,
-    image3.jpg 900w"
-  class="lazyload"
-/>
+<!-- This won't work -->
+
+<img :data-src="require('~/assets/media/image.jpg')" class="lazyload" />
 ```
 
-```html
-<!-- iframe example -->
-<iframe
-  frameborder="0"
-  class="lazyload"
-  allowfullscreen=""
-  data-src="//www.youtube.com/embed/ZfV-aYdU4uE"
->
-</iframe>
-```
-
-[More info](https://github.com/aFarkas/lazysizes#how-to)
-
-## Options
-
-`lazysizes` comes with a simple `markup` and `JS` API. Normally you will only need to use the markup API.
-
-**Markup API**
-
-Add the class `lazyload` to all `img` and `iframe` elements, which should be loaded lazy. _Instead_ of a `src` or `srcset` attribute use a `data-src` or `data-srcset` attribute:
-
-```html
-<img data-src="image.jpg" class="lazyload" />
-<!-- retina optimized image: -->
-<img
-  data-srcset="responsive-image1.jpg 1x, responsive-image2.jpg 2x"
-  class="lazyload"
-/>
-```
-
-`lazysizes` supports setting the `sizes` attribute automatically, corresponding to the current size of your image - just set the value of `data-sizes` to `auto`.
-
-```html
-<img
-  data-sizes="auto"
-  data-srcset="responsive-image1.jpg 300w,
-	    responsive-image2.jpg 600w,
-	    responsive-image3.jpg 900w"
-  class="lazyload"
-/>
-```
-
-[More info](https://github.com/aFarkas/lazysizes#markup-api)
-
-**JS API**
-
-`lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
+To fix that problem, the module provides `extendAssetUrls` option which can be used to extend the nuxt build loader and define custom tags with new attributes:
 
 ```js
 // nuxt.config.js
 
 {
-  /* Default options */
+  buildModules: ['nuxt-lazysizes'],
+
   lazySizes: {
+    extendAssetUrls: {
+      img: 'data-src',
+      source: 'data-srcset',
+      // Component with custom props
+      AppImage: ['source-url', 'image-url'],
+    },
+  }
+}
+```
+
+Now loading images from the `assets` folder will work properly:
+
+```html
+<img data-src="~/assets/media/image.jpg" class="lazyload" />
+```
+
+```html
+<figure>
+  <picture>
+    <source
+      data-srcset="~/assets/media/image-md.jpg"
+      media="(min-width:700px)"
+    />
+    <img data-src="~/assets/media/image.jpg" class="lazyload" />
+  </picture>
+</figure>
+```
+
+```html
+<AppImage
+  source-url="~/assets/media/image-md.jpg"
+  image-url="~/assets/media/image.jpg"
+/>
+```
+
+## Options
+
+`lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
+
+**All default options**
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    extendAssetUrls: undefined,
+
+    // LazySizes default options
     lazyClass: 'lazyload',
     loadedClass: 'lazyloaded',
     loadingClass: 'lazyloading',
@@ -145,43 +151,6 @@ Add the class `lazyload` to all `img` and `iframe` elements, which should be loa
 ```
 
 [More info](https://github.com/aFarkas/lazysizes#js-api)
-
-**CSS API**
-
-`lazysizes` adds the class `lazyloading` while the images are loading and the class `lazyloaded` as soon as the image is loaded. This can be used to add unveil effects:
-
-```css
-/* global css */
-
-/* fade image in after load */
-.lazyload,
-.lazyloading {
-  opacity: 0;
-}
-
-.lazyloaded {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-```
-
-```css
-/* global css */
-
-/* fade image in while loading and show a spinner as background image (good for progressive images) */
-
-.lazyload {
-  opacity: 0;
-}
-
-.lazyloading {
-  opacity: 1;
-  transition: opacity 300ms;
-  background: #f7f7f7 url(loader.gif) no-repeat center;
-}
-```
-
-[More info](https://github.com/aFarkas/lazysizes#css-api)
 
 ## License
 
