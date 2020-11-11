@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.1.0...v1.1.1) (2020-11-11)
+
+
+### Bug Fixes
+
+* add missing 'pluginOptions' to resolve empty object issue ([61a0a47](https://github.com/ivodolenc/nuxt-lazysizes/commit/61a0a47555f348daa871c6365a2f55e1005b598b))
+
 ## [1.1.0](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.0.3...v1.1.0) (2020-11-10)
 
 
