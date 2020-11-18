@@ -10,7 +10,7 @@ LazySizes module for Nuxt.js
 
 - Helps you integrate `lazysizes` image loader
 - Allows you to easily set options through the module
-- Includes settings for extending the nuxt build `loader`
+- Includes settings that can be used to extend the Nuxt build `loader`
 - Boosts your lighthouse score and overall performance
 - Provides a `lightweight`, `fast` and `reliable` solution
 - Includes `zero-config` setup ready to go
@@ -40,9 +40,14 @@ export default {
 
 ## Examples
 
-`lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
+💻 Here are some code examples
 
-**Basic usage**
+- [Basic](https://github.com/ivodolenc/nuxt-examples/tree/master/nuxt-lazysizes/basic)
+- [Advanced](https://github.com/ivodolenc/nuxt-examples/tree/master/nuxt-lazysizes/advanced)
+
+### Basic usage
+
+✨ `lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
 
 ```js
 // nuxt.config.js
@@ -58,7 +63,7 @@ export default {
 
 [More info](https://github.com/aFarkas/lazysizes#more-about-the-api)
 
-**Advanced usage (optional)**
+### Advanced usage (optional)
 
 By default, loading images from the `assets` folder won't work without extra settings because lazysizes uses custom attributes for lazyloading.
 
@@ -68,7 +73,7 @@ By default, loading images from the `assets` folder won't work without extra set
 <img :data-src="require('~/assets/media/image.jpg')" class="lazyload" />
 ```
 
-To fix that problem, the module provides `extendAssetUrls` option which can be used to extend the nuxt build loader and define custom tags with new attributes:
+✅ To fix this problem, the module provides `extendAssetUrls` option that can be used to extend the Nuxt build loader and define custom tags with new attributes:
 
 ```js
 // nuxt.config.js
@@ -81,17 +86,21 @@ To fix that problem, the module provides `extendAssetUrls` option which can be u
       img: 'data-src',
       source: 'data-srcset',
       // Component with custom props
-      AppImage: ['source-url', 'image-url'],
+      AppImage: ['source-md-url', 'image-url'],
     },
   }
 }
 ```
 
-Now loading images from the `assets` folder will work properly:
+After defining the `extendAssetUrls` option, loading images from the `assets` folder will work as expected 👌
+
+**Non-responsive example**
 
 ```html
 <img data-src="~/assets/media/image.jpg" class="lazyload" />
 ```
+
+**Responsive example**
 
 ```html
 <figure>
@@ -105,18 +114,20 @@ Now loading images from the `assets` folder will work properly:
 </figure>
 ```
 
+**Custom component example**
+
 ```html
 <AppImage
-  source-url="~/assets/media/image-md.jpg"
+  source-md-url="~/assets/media/image-md.jpg"
   image-url="~/assets/media/image.jpg"
 />
 ```
 
 ## Options
 
-`lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
+✅ `lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
 
-**All default options**
+**Default options**
 
 ```js
 // nuxt.config.js
@@ -125,7 +136,7 @@ Now loading images from the `assets` folder will work properly:
   lazySizes: {
     extendAssetUrls: undefined,
 
-    // LazySizes default options
+    // LazySizes JS API
     lazyClass: 'lazyload',
     loadedClass: 'lazyloaded',
     loadingClass: 'lazyloading',
@@ -153,6 +164,14 @@ Now loading images from the `assets` folder will work properly:
 [More info](https://github.com/aFarkas/lazysizes#js-api)
 
 ## License
+
+**LazySizes**
+
+[MIT License](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
+
+Copyright (c) Alexander Farkas
+
+**Nuxt LazySizes Module**
 
 [MIT License](LICENSE)
 
