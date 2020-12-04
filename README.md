@@ -11,17 +11,16 @@ LazySizes module for Nuxt.js
 - Helps you integrate `lazysizes` image loader
 - Allows you to easily set options through the module
 - Includes settings that can be used to extend the Nuxt build `loader`
-- Boosts your lighthouse score and overall performance
+- Boosts your lighthouse score and overall performance 🔥
 - Provides a `lightweight`, `fast` and `reliable` solution
-- Includes `zero-config` setup ready to go
-- [and much more](https://github.com/aFarkas/lazysizes#what-makes-lazysizes-so-awesome) 🔥
+- `Zero-config` setup ready to go 🚀
 
-## Setup
+## Quick Start
 
 1. Add `nuxt-lazysizes` dependency to your project
 
 ```bash
-$ npm install --save-dev nuxt-lazysizes
+$ npm install --save-dev nuxt-lazysizes # or yarn add --dev nuxt-lazysizes
 ```
 
 2. Add `nuxt-lazysizes` to the `buildModules` section of `nuxt.config.js`
@@ -38,16 +37,18 @@ export default {
 }
 ```
 
+That's it! Start developing your app ✨
+
 ## Examples
 
 💻 Here are some code examples
 
-- [Basic](https://github.com/ivodolenc/nuxt-examples/tree/master/nuxt-lazysizes/basic)
-- [Advanced](https://github.com/ivodolenc/nuxt-examples/tree/master/nuxt-lazysizes/advanced)
+- [Basic](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/basic)
+- [Advanced](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/advanced)
 
 ### Basic usage
 
-✨ `lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
+`lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
 
 ```js
 // nuxt.config.js

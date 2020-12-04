@@ -21,9 +21,9 @@ export default function nuxtLazySizes(moduleOptions) {
   const { extendAssetUrls, ...pluginOptions } = options
 
   addPlugin({
-    src: resolve(__dirname, 'plugin.js'),
-    ssr: false,
+    src: resolve(__dirname, '../templates/plugin.js'),
     fileName: 'lazySizes.js',
+    ssr: false,
     options: {
       ...pluginOptions
     }
