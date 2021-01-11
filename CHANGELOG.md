@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.1.2...v1.2.0) (2021-01-11)
+
+
+### Features
+
+* add options to enable lazysizes plugins ([0684fff](https://github.com/ivodolenc/nuxt-lazysizes/commit/0684fff94c1a6173b70478344daf7c30347e02f2))
+
 ### [1.1.2](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.1.1...v1.1.2) (2020-12-04)
 
 ### [1.1.1](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.1.0...v1.1.1) (2020-11-11)
