@@ -5,6 +5,11 @@ export default function nuxtLazySizes(moduleOptions) {
   const { nuxt, addPlugin, extendBuild } = this
   const options = {
     extendAssetUrls: undefined,
+    plugins: {
+      blurUp: false,
+      nativeLoading: false,
+      unveilhooks: false
+    },
 
     ...nuxt.options.lazySizes,
     ...moduleOptions
@@ -18,14 +23,15 @@ export default function nuxtLazySizes(moduleOptions) {
     })
   }
 
-  const { extendAssetUrls, ...pluginOptions } = options
+  const { extendAssetUrls, plugins, ...lsConfig } = options
 
   addPlugin({
     src: resolve(__dirname, '../templates/plugin.js'),
     fileName: 'lazySizes.js',
     ssr: false,
     options: {
-      ...pluginOptions
+      config: lsConfig,
+      plugins: options.plugins
     }
   })
 }
