@@ -8,11 +8,12 @@ LazySizes module for Nuxt.js
 
 ## Features
 
-- Helps you integrate `lazysizes` image loader
+- Helps you integrate `lazysizes` loader
 - Allows you to easily set options through the module
 - Includes settings that can be used to extend the Nuxt build `loader`
 - Boosts your lighthouse score and overall performance 🔥
 - Provides a `lightweight`, `fast` and `reliable` solution
+- Supports options to enable additional `plugins`
 - `Zero-config` setup ready to go 🚀
 
 ## Quick Start
@@ -48,7 +49,7 @@ That's it! Start developing your app ✨
 
 ### Basic usage
 
-`lazysizes` does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
+Lazysizes does not need any configuration. Add the class `lazyload` to your images/iframes in combination with a `data-src` and/or `data-srcset` attribute.
 
 ```js
 // nuxt.config.js
@@ -86,6 +87,7 @@ By default, loading images from the `assets` folder won't work without extra set
     extendAssetUrls: {
       img: 'data-src',
       source: 'data-srcset',
+
       // Component with custom props
       AppImage: ['source-md-url', 'image-url'],
     },
@@ -124,9 +126,33 @@ After defining the `extendAssetUrls` option, loading images from the `assets` fo
 />
 ```
 
+### Extra plugins (optional)
+
+The module also supports options to enable additional `plugins`, so you can easily extend and adjust lazysizes to your needs.
+
+By default, all plugins are set to `false`.
+
+**Plugins example**
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      blurUp: true,
+      nativeLoading: true,
+      unveilhooks: true,
+    }
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins)
+
 ## Options
 
-✅ `lazysizes` automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
+Lazysizes automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
 
 **Default options**
 
@@ -136,6 +162,11 @@ After defining the `extendAssetUrls` option, loading images from the `assets` fo
 {
   lazySizes: {
     extendAssetUrls: undefined,
+    plugins: {
+      blurUp: false,
+      nativeLoading: false,
+      unveilhooks: false
+    },
 
     // LazySizes JS API
     lazyClass: 'lazyload',
@@ -163,6 +194,83 @@ After defining the `extendAssetUrls` option, loading images from the `assets` fo
 ```
 
 [More info](https://github.com/aFarkas/lazysizes#js-api)
+
+### Blur-Up plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      blurUp: true
+    },
+
+    // Default 'blurUp' settings
+    blurUpClass: 'ls-blur-up-img',
+    blurUpLoadingClass: 'ls-blur-up-is-loading',
+    blurUpInviewClass: 'ls-inview',
+    blurUpLoadedClass: 'ls-blur-up-loaded',
+    blurUpLoadedOriginalClass: 'ls-original-loaded'
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/blur-up)
+
+### Native loading plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      nativeLoading: true
+    },
+
+    // Default 'nativeLoading' settings
+    nativeLoading: {
+      setLoadingAttribute: false,
+      listenerMap: {
+        focus: 1,
+        mouseover: 1,
+        click: 1,
+        load: 1,
+        transitionend: 1,
+        animationend: 1,
+        scroll: 1,
+        resize: 1
+      },
+      disableListeners: undefined
+    }
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/native-loading)
+
+### Unveilhooks plugin (data-bg)
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      unveilhooks: true
+    },
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)
 
 ## License
 
