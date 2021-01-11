@@ -46,6 +46,7 @@ That's it! Start developing your app ✨
 
 - [Basic](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/basic)
 - [Advanced](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/advanced)
+- [Plugins](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/plugins)
 
 ### Basic usage
 
