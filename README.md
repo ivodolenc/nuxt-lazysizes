@@ -86,10 +86,10 @@ By default, loading images from the `assets` folder won't work without extra set
 
   lazySizes: {
     extendAssetUrls: {
-      img: 'data-src',
-      source: 'data-srcset',
+      img: ['src', 'srcset', 'data-src', 'data-srcset'],
+      source: ['src', 'srcset', 'data-src', 'data-srcset'],
 
-      // Component with custom props
+      // Example for a custom component
       AppImage: ['source-md-url', 'image-url'],
     },
   }
