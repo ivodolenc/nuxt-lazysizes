@@ -28,7 +28,6 @@ export default function nuxtLazySizes(moduleOptions) {
   addPlugin({
     src: resolve(__dirname, '../templates/plugin.js'),
     fileName: 'lazySizes.js',
-    ssr: false,
     options: {
       config: lsConfig,
       plugins: options.plugins
