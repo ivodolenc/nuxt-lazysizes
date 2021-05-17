@@ -144,6 +144,8 @@ By default, all plugins are set to `false`.
       blurUp: true,
       nativeLoading: true,
       unveilhooks: true,
+      parentFit: true,
+      rias: true
     }
   }
 }
@@ -166,7 +168,9 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
     plugins: {
       blurUp: false,
       nativeLoading: false,
-      unveilhooks: false
+      unveilhooks: false,
+      parentFit: false,
+      rias: false
     },
 
     // LazySizes JS API
@@ -272,6 +276,56 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```
 
 [More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)
+
+### Parent-fit plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      parentFit: true
+    },
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/parent-fit)
+
+### Rias plugin (Responsive image as a service / Responsive image on demand)
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      rias: true
+    },
+
+    // Rias defaults
+    rias: {
+      prefix: '',
+      postfix: '',
+      srcAttr: 'data-src',
+      absUrl: false,
+      modifyOptions: noop,
+      widthmap: {},
+      ratio: false,
+      traditionalRatio: false,
+      aspectratio: false,
+      widths: []
+    }
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/rias)
 
 ## License
 
