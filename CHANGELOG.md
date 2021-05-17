@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.2.2...v1.3.0) (2021-05-17)
+
+
+### Features
+
+* add support for 'rias' and 'parentFit' extra plugins ([c9e0e39](https://github.com/ivodolenc/nuxt-lazysizes/commit/c9e0e39949fdde1b0c877429babaa47382ab132d))
+
 ### [1.2.2](https://github.com/ivodolenc/nuxt-lazysizes/compare/v1.2.1...v1.2.2) (2021-04-19)
 
 
