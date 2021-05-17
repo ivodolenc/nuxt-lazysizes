@@ -8,7 +8,9 @@ export default function nuxtLazySizes(moduleOptions) {
     plugins: {
       blurUp: false,
       nativeLoading: false,
-      unveilhooks: false
+      unveilhooks: false,
+      parentFit: false,
+      rias: false
     },
 
     ...nuxt.options.lazySizes,
