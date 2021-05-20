@@ -145,7 +145,10 @@ By default, all plugins are set to `false`.
       nativeLoading: true,
       unveilhooks: true,
       parentFit: true,
-      rias: true
+      rias: true,
+      optimumx: true,
+      customMedia: true,
+      bgset: true
     }
   }
 }
@@ -170,7 +173,10 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
       nativeLoading: false,
       unveilhooks: false,
       parentFit: false,
-      rias: false
+      rias: false,
+      optimumx: false,
+      customMedia: false,
+      bgset: false
     },
 
     // LazySizes JS API
@@ -326,6 +332,62 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```
 
 [More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/rias)
+
+### Optimumx plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      optimumx: true
+    },
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/optimumx)
+
+### CustomMedia plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      customMedia: true
+    },
+
+    customMedia: {}
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/custommedia)
+
+### Bgset plugin
+
+- Default: `false`
+
+```js
+// nuxt.config.js
+
+{
+  lazySizes: {
+    plugins: {
+      bgset: true
+    },
+  }
+}
+```
+
+[More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/bgset)
 
 ## License
 
