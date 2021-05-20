@@ -12,7 +12,17 @@ Object.assign(lazysizes.cfg, lsConfig)
   require('lazysizes/plugins/parent-fit/ls.parent-fit')
 <% } %>
 
-<% if (options.plugins.nativeLoading || options.plugins.unveilhooks || options.plugins.rias) { %>
+<% if (options.plugins.optimumx) { %>
+  require('lazysizes/plugins/optimumx/ls.optimumx')
+<% } %>
+
+<% if (
+  options.plugins.nativeLoading || 
+  options.plugins.unveilhooks || 
+  options.plugins.rias || 
+  options.plugins.customMedia || 
+  options.plugins.bgset
+) { %>
   if(process.client){
     <% if (options.plugins.nativeLoading) { %>
       require('lazysizes/plugins/native-loading/ls.native-loading')
@@ -24,6 +34,14 @@ Object.assign(lazysizes.cfg, lsConfig)
 
     <% if (options.plugins.rias) { %>
       require('lazysizes/plugins/rias/ls.rias')
+    <% } %>
+
+    <% if (options.plugins.customMedia) { %>
+      require('lazysizes/plugins/custommedia/ls.custommedia')
+    <% } %>
+
+    <% if (options.plugins.bgset) { %>
+      require('lazysizes/plugins/bgset/ls.bgset')
     <% } %>
   }
 <% } %>

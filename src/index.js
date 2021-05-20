@@ -10,7 +10,10 @@ export default function nuxtLazySizes(moduleOptions) {
       nativeLoading: false,
       unveilhooks: false,
       parentFit: false,
-      rias: false
+      rias: false,
+      optimumx: false,
+      customMedia: false,
+      bgset: false
     },
 
     ...nuxt.options.lazySizes,
