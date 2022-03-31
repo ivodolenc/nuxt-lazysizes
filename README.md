@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=".github/assets/cover.svg" >
+    <img src=".github/assets/cover22.svg" >
 </p>
 
 <h1>Nuxt LazySizes</h1>
@@ -18,13 +18,13 @@ LazySizes module for Nuxt.js
 
 ## Quick Start
 
-1. Add `nuxt-lazysizes` dependency to your project
+1. Install `nuxt-lazysizes` dependency to your project
 
 ```bash
-$ npm install --save-dev nuxt-lazysizes # or yarn add --dev nuxt-lazysizes
+$ yarn add -D nuxt-lazysizes # or npm i -D nuxt-lazysizes
 ```
 
-2. Add `nuxt-lazysizes` to the `buildModules` section of `nuxt.config.js`
+2. Enable `nuxt-lazysizes` in the `buildModules` section
 
 ```js
 // nuxt.config.js
@@ -33,16 +33,16 @@ export default {
   buildModules: ['nuxt-lazysizes'],
 
   lazySizes: {
-    /* module options */
+    /* Module Options */
   }
 }
 ```
 
-That's it! Start developing your app ✨
+That's it! Start developing your app!
 
 ## Examples
 
-💻 Here are some code examples
+Here are some code examples
 
 - [Basic](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/basic)
 - [Advanced](https://github.com/ivodolenc/nuxt-lazysizes/tree/master/examples/advanced)
@@ -55,8 +55,8 @@ Lazysizes does not need any configuration. Add the class `lazyload` to your imag
 ```js
 // nuxt.config.js
 
-{
-  buildModules: ['nuxt-lazysizes'],
+export default {
+  buildModules: ['nuxt-lazysizes']
 }
 ```
 
@@ -81,7 +81,7 @@ By default, loading images from the `assets` folder won't work without extra set
 ```js
 // nuxt.config.js
 
-{
+export default {
   buildModules: ['nuxt-lazysizes'],
 
   lazySizes: {
@@ -90,8 +90,8 @@ By default, loading images from the `assets` folder won't work without extra set
       source: ['src', 'srcset', 'data-src', 'data-srcset'],
 
       // Example for a custom component
-      AppImage: ['source-md-url', 'image-url'],
-    },
+      AppImage: ['source-md-url', 'image-url']
+    }
   }
 }
 ```
@@ -113,6 +113,7 @@ After defining the `extendAssetUrls` option, loading images from the `assets` fo
       data-srcset="~/assets/media/image-md.jpg"
       media="(min-width:700px)"
     />
+
     <img data-src="~/assets/media/image.jpg" class="lazyload" />
   </picture>
 </figure>
@@ -131,23 +132,14 @@ After defining the `extendAssetUrls` option, loading images from the `assets` fo
 
 The module also supports options to enable additional `plugins`, so you can easily extend and adjust lazysizes to your needs.
 
-By default, all plugins are set to `false`.
-
-**Plugins example**
-
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       blurUp: true,
       nativeLoading: true,
-      unveilhooks: true,
-      parentFit: true,
-      rias: true,
-      optimumx: true,
-      customMedia: true,
       bgset: true
     }
   }
@@ -156,16 +148,16 @@ By default, all plugins are set to `false`.
 
 [More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins)
 
-## Options
+## Module Options
 
 Lazysizes automatically detects new elements with the class `lazyload` so you won't need to call or configure anything in most situations.
 
-**Default options**
+**Defaults**
 
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     extendAssetUrls: undefined,
     plugins: {
@@ -213,7 +205,7 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       blurUp: true
@@ -238,7 +230,7 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       nativeLoading: true
@@ -272,11 +264,11 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       unveilhooks: true
-    },
+    }
   }
 }
 ```
@@ -290,25 +282,25 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       parentFit: true
-    },
+    }
   }
 }
 ```
 
 [More info](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/parent-fit)
 
-### Rias plugin (Responsive image as a service / Responsive image on demand)
+### Rias plugin
 
 - Default: `false`
 
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       rias: true
@@ -340,11 +332,11 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       optimumx: true
-    },
+    }
   }
 }
 ```
@@ -358,7 +350,7 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       customMedia: true
@@ -378,11 +370,11 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 ```js
 // nuxt.config.js
 
-{
+export default {
   lazySizes: {
     plugins: {
       bgset: true
-    },
+    }
   }
 }
 ```
@@ -397,7 +389,7 @@ Lazysizes automatically detects new elements with the class `lazyload` so you wo
 
 Copyright (c) Alexander Farkas
 
-**Nuxt LazySizes Module**
+**Nuxt LazySizes**
 
 [MIT License](LICENSE)
 
