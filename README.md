@@ -1,10 +1,6 @@
-<p align="center">
-    <img src=".github/assets/cover22.svg" >
-</p>
+# Nuxt Lazysizes
 
-<h1>Nuxt LazySizes</h1>
-
-LazySizes module for Nuxt.js
+Lazysizes module for Nuxt 2.
 
 ## Features
 
